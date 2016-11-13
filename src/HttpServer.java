@@ -20,7 +20,7 @@ public class HttpServer {
         }
         System.out.println(WEB_ROOT);
         HttpServer server = new HttpServer();
-        //等待连接请求
+        // Waiting for connection
         server.await();
     }
 
