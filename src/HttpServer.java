@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class HttpServer {
 
-    static final String WEB_ROOT = System.getProperty("user.dir") + File.separator + "webroot";
+    static String WEB_ROOT = System.getProperty("user.dir") + File.separator + "webroot";
     static final String DEFAULT_FILE = "index.html";
 
     // The command to close server
@@ -15,6 +15,9 @@ public class HttpServer {
 
     public static void main(String[] args) {
 
+        if (args.length > 0) {
+            WEB_ROOT = args[0];
+        }
         System.out.println(WEB_ROOT);
         HttpServer server = new HttpServer();
         //等待连接请求
